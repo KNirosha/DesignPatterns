@@ -1,0 +1,54 @@
+----------------
+Bridge Pattern::
+----------------
+
+A Bridge Pattern says that just "decouple the functional abstraction from the implementation so that the two can vary independently".
+
+Bridge design pattern has two major parts: Abstraction and Implementation.
+
+Bridge design pattern allows the Abstraction and Implementation to be developed independently, and client code will use only 
+abstraction part without being concerned about implementation.
+
+Bridge design pattern separates the abstraction hierarchy and implementation hierarchy in two different layers so that change in one hierarchy
+will not affect the other hierarchy.
+
+Bridge Creates two different hierarchies. One for abstraction and another for implementation.
+
+Avoids permanent binding by removing the dependency between abstraction and implementation.
+---------------------------------------------------------------------------------------------------
+Bridge is used when we need to decouple an abstraction from its implementation so that the two can vary independently. 
+
+This type of design pattern comes under structural pattern as this pattern decouples implementation class and abstract class by providing a bridge structure between them.
+
+This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes. 
+
+Both types of classes can be altered structurally without affecting each other.
+
+==============================================================================================
+Advantage of Bridge Pattern:
+
+It enables the separation of implementation from the interface.
+It improves the extensibility.
+It allows the hiding of implementation details from the client.
+==============================================================================================
+Usage of Bridge Pattern
+
+When you don't want a permanent binding between the functional abstraction and its implementation.
+When both the functional abstraction and its implementation need to extended using sub-classes.
+It is mostly used in those places where changes are made in the implementation does not affect the clients.
+
+==============================================================================================
+Example explanation:
+
+Abstraction Layer: AbstarctRemoteController.java, SamsungRemoteController.java, SonyRemoteController.java
+
+Implementation Layer: LEDTV.java, SonyTV.java, SamsungTV.java
+
+==============================================================================================
+Bridge Vs Adapter Design Pattern
+
+The adapter design pattern helps it two incompatible classes to work together. 
+
+But, bridge design pattern decouples the abstraction and implementation by creating two different hierarchies.
+
+==============================================================================================

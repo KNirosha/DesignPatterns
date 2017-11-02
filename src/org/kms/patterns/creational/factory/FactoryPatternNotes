@@ -1,0 +1,44 @@
+FACTORY DESIGN PATTERN:
+
+Factory Pattern is one of the Creational Design pattern and it’s widely
+used in JDK as well as frameworks like Spring and Struts.
+
+Factory design pattern is used when we have a super class with multiple subclasses
+and based on input, we need to return one of the sub-class.
+
+This pattern take out the responsibility of instantiation of a class from client
+program to the factory class. 
+
+In Factory pattern, we create object without exposing the creation logic to the client 
+and refer to newly created object using a common interface.
+
+--------------------------------------
+Advantages of Factory Design Pattern
+---------------------------------------
+1. Factory pattern provides approach to code for interface rather than
+implementation.
+2. Factory pattern removes the instantiation of actual implementation
+classes from client code, making it more robust, less coupled and easy
+to extend.
+3. Factory pattern provides abstraction between implementation and
+client classes through inheritance.
+4.It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code. 
+That means the code interacts solely with the resultant interface or abstract class, so that it will work with any classes that implement that interface or that extends that abstract class.
+5.Factory Method Pattern allows the sub-classes to choose the type of objects to create.
+-----------------------------
+When to use factory pattern
+-----------------------------
+When a class doesn't know what sub-classes will be required to create.
+When a class wants that its sub-classes specify the objects to be created.
+When the parent classes delegates the creation of objects to its sub-classes.
+When Client doesn't know what concrete classes it will be required to create at runtime, 
+but just wants to get a class that will do the job.
+
+Example: Payment ==> NetBanking,CreditCard,DebitCard
+Here, In run time only client class will get to know which object it has to create (NetBanking,CreditCard,DebitCard) on the basic of user selects the payment mode.
+---------------------------------------
+Factory Pattern Examples in JDK
+---------------------------------------
+1. java.util.Calendar, ResourceBundle and NumberFormat getInstance()
+methods uses Factory pattern.
+2. valueOf() method in wrapper classes like Boolean, Integer etc

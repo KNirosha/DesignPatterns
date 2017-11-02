@@ -1,0 +1,82 @@
+ABSTRACT FACTORY DESIGN PATTERN:
+=================================
+Abstract Factory patterns work around a super-factory which creates other factories.
+
+This factory is also called as factory of factories.
+
+This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+
+In Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
+
+Abstract Factory internally uses factory pattern and provides a super factory that gives factory of factories.
+---------------------------------------------------------------------------------------------------------------------------------
+GOF SAYS "Provides an interface for creating families of related or dependent objects without specifying their concrete classes"
+---------------------------------------------------------------------------------------------------------------------------------
+
+Example:
+
+Lets us take BANK. It has 3 Major functions
+			- Accounts
+			- Loans
+			- Payments
+			
+			Accounts ==> [Savings Acc, DMAT Acc]
+			
+			Loans==> [Gold loan,Personal loan]
+			
+			Payments==> [CreditCard Payment, E-Check Payment]
+
+For Accounts , we have 	AccountFactory that gives Savings Acc, DMAT Acc.
+For Loans, we have	LoanFactory that gives Gold loan,Personal loan.
+For Payments, we have PaymentFactory gives CreditCard Payment, E-Check Payment.
+
+BankFactory is a super factory that gives AccountFactory,LoanFactory,PaymentFactory
+
+=================================================================================
+
+The abstract factory pattern is a creational design pattern. 
+
+An abstract factory is a factory that returns factories. 
+
+Why is this layer of abstraction useful? 
+A normal factory can be used to create sets of related objects. An abstract factory returns factories. Thus, an abstract factory is used to return factories that can be used to create sets of related objects.
+
+
+=============================================================================
+Abstract Factory Pattern Examples in JDK
+==============================================================================
+
+ javax.xml.parsers.DocumentBuilderFactory#newInstance()
+ javax.xml.transform.TransformerFactory#newInstance()
+ javax.xml.xpath.XPathFactory#newInstance()Abstract Factory Pattern Examples in JDK
+ javax.xml.parsers.DocumentBuilderFactory#newInstance()
+ javax.xml.transform.TransformerFactory#newInstance()
+ javax.xml.xpath.XPathFactory#newInstance()
+ 
+ ===============================================================
+Factory method: You have a factory that creates objects that derive from a particular base class
+
+Abstract factory: You have a factory that creates other factories, and these factories in turn create objects derived from base classes. You do this because you often don't just want to create a single object (as with Factory method) - rather, you want to create a collection of related objects.
+
+=================================================
+
+When to use Abstract Factory and Factory method design pattern in Java???
+-----------------------------------------------------------------------
+Factory method design pattern offers some notable advantages over new() operator to create Objects.
+
+Example:
+By using Factory method design pattern client is completely decoupled with object creation code, which enforces Encapsulation and result is loosely coupled and highly cohesive system.
+
+Any change e.g. a new product from Factory requires almost no change in existing clients. See When to use Factory method design pattern in Java for more scenarios. 
+
+On the other hand if you need an additional level of abstraction over your Factory pattern than Abstract Factory is the right design pattern to use. 
+
+Abstract Factory allows you to use different Factory implementation for different purpose. 
+
+Abstract Factory pattern can be implemented using Factory method and Singleton design pattern in Java. 
+
+One of the best example of Abstract Factory and Factory pattern in Java is DocumentBuilderFactory and DocumentBuilder javax.xml.parsers package.
+
+
+
+

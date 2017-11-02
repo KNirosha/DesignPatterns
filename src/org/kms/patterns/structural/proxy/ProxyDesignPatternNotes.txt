@@ -1,0 +1,40 @@
+Proxy Pattern:
+--------------
+GoF Says:
+
+“Provide a surrogate or placeholder for another
+object to control access to it”
+
+So, we can perform many operations like hiding the information of original object, on demand loading etc.
+
+Proxy pattern is also known as Surrogate or Placeholder.
+
+It provides the protection to the original object from the outside world.
+---------------------------------------------------------------------------------------------------
+Proxy in the Real World ::
+-----------------------
+In the real work a cheque or credit card is a proxy for what is in our bank account.  
+It can be used in place of cash, which is what is needed, and provides a means of accessing that cash when required. 
+And that's exactly what the Proxy pattern does - controls and manage access to the object they are "protecting".
+
+Proxy pattern is used when we want provide controlled access of a functionality.
+
+-------------------------------------------
+Example:
+Let’s say we have a class that can run some command on the system.Now if we are using it, its fine but if
+we want to give this program to a client application, it can have severe issues because client program can 
+issue command to delete some system files or change some settings that you don’t want. Here a proxy class can be created
+to provide controlled access of the program.
+===========================================================================================
+Usage of Proxy Pattern:
+
+It is used:
+
+It can be used in Virtual Proxy scenario---Consider a situation where there is multiple database calls to extract huge size image. Since this is an expensive operation so here we can use the proxy pattern which would create multiple proxies and point to the huge size memory consuming object for further processing. The real object gets created only when a client first requests/accesses the object and after that we can just refer to the proxy to reuse the object. This avoids duplication of the object and hence saving memory.
+It can be used in Protective Proxy scenario---It acts as an authorization layer to verify that whether the actual user has access the appropriate content or not. For example, a proxy server which provides restriction on internet access in office. Only the websites and contents which are valid will be allowed and the remaining ones will be blocked.
+It can be used in Remote Proxy scenario---A remote proxy can be thought about the stub in the RPC call. The remote proxy provides a local representation of the object which is present in the different address location. Another example can be providing interface for remote resources such as web service or REST resources.
+It can be used in Smart Proxy scenario---A smart proxy provides additional layer of security by interposing specific actions when the object is accessed. For example, to check whether the real object is locked or not before accessing it so that no other objects can change it.
+=====================================================================================
+
+
+

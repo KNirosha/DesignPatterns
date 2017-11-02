@@ -1,0 +1,87 @@
+Facade design pattern:
+----------------------
+----------------------------
+Intent::
+
+Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+Wrap a complicated subsystem with a simpler interface.
+
+---------------------------
+Facade design pattern is used in scenarios where a simple interface needs to be provided to a complex underlying system.
+
+Simple example!!! Marriage Event!!!!!
+--------------------------------------
+Consider a marriage event. It has many sub tasks like function hall booking, decoration, catering, photography, music show,,etc
+
+If we want to oragnise the marriage, then we need to communicate with all the above sub systems and get the things done.
+
+Imagine, instaed of we take care of all the aforementioned stuff, lets just interact with event-management guy.
+Event-manager will take care of all the activities required for marriage.
+
+So, to interact with different sub-systems we just contact only one super system named Event-manager and event-manager internally
+take care of all events.
+
+Conclusion: here Event-manager is facade. And function hall booking, decoration, catering, photography, music show are complex interdependant sub-systems.
+
+Here I'm calling interdependant bacause : caterer must know the venue & music guy should know the venue and venue guy should know the date and time....etc
+-----------------------------------------------------
+
+The Facade design pattern is often used when a system is very complex or difficult to understand
+because the system has a large number of interdependent classes.
+
+This pattern hides the complexities of the larger system and provides a simpler interface to the client.
+
+It typically involves a single wrapper class that contains a set of members required by client. <Event-manager>
+
+Facade pattern improves decoupling between the clients and subsystems as the higher-level interface can absorb any changes which might happen in the lower subsystems interfaces and provide a consistent interface to the clients.
+
+system portability:
+-------------------
+
+What happens one caterer says no? Simple..... the Event-manager search for another caterer and get the job done.
+
+facade pattern also offers system portability as the clients only design and code for the higher-level interface defined by the Facade.
+
+Porting of the subsystems then becomes easy as all the complexity of porting is hidden from the clients by the Facade layer.
+
+Layered subsystems can have a facade for each layer. Thus communication between layers of the subsystem is much simplified as it happens through the subsystem facades rather than directly deal with the complexities of the subsystem’s individual classes.
+
+
+
+Facade pattern offers:
+
+- make a software library easier to use, understand and test.
+- reduce dependencies of outside code on the inner workings of a library.
+- wrap a poorly designed collection of APIs with a single well-designed API.
+
+
+Example:
+
+THE PROBLEM: ???
+
+Consider a BankTransaction, it have verifyAccount,debit and credit and view balance functionality. Each of these functionality is provided
+by different service classes. 
+
+If Bank client wanted to use BankTransaction service, he has to create object for each service like :verifyAccount,debit and credit and view balance
+
+Problem here is, if bank-client and bank resides in two different systems connected through network, then for each service request a new object must be created,
+it should come through network and will process the service.
+
+THE SOLUTION: ???
+
+Lets create a facade layer BankTransactionFacade<interface>, that will give us verifyAccount, debitTransaction, creditTransaction, viewTotalBalance services.
+
+Bank-Client will use BankTransactionFacade and call appropriate services. Here, BankTransactionFacade will internally call the required service classes instaed of allowing user
+to call each service object individually.
+
+=================================================
+How it is different from factory???
+==================================================
+
+Factory design pattern is used in scenarios where a family of objects is to be created. Just like Circle, Square,Rectangle under Shape factory.
+
+But in Facade design pattern, facade can expose any service(all services no need to be one family) like account verification, debit, credit,etc
+
+==================================================
+
+
